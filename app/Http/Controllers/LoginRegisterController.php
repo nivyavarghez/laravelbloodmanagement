@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class LoginRegisterController extends Controller
@@ -37,15 +38,13 @@ class LoginRegisterController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'gender' => 'required',
-            'password' => 'required|min:6',
-            
-           
+            'password' => 'required|min:6', 
         ]);
            
         $data = $request->all();
         $check = $this->create($data);
          
-        return redirect("dashboard")->withSuccess('You have signed-in');
+        return redirect("login")->withSuccess('You have signed-up successfully');
     }
 
 
@@ -59,10 +58,10 @@ class LoginRegisterController extends Controller
       ]);
     }
 
-    public function dashboard()
+    public function index()
     {
         if(Auth::check()){
-            return view('dashboard');
+            return view('index');
         }
   
         return redirect("login")->withSuccess('You are not allowed to access');
