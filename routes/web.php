@@ -3,12 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginRegisterController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('login', [LoginRegisterController::class, 'index'])->name('login');
-Route::post('custom-login', [LoginRegisterController::class, 'customLogin'])->name('login.custom'); 
-Route::get('register', [LoginRegisterController::class, 'register'])->name('register-user');
-Route::post('custom-registration', [LoginRegisterController::class, 'customRegistration'])->name('register.custom'); 
-Route::get('signout', [LoginRegisterController::class, 'signOut'])->name('signout');
+Route::post('post-login', [LoginRegisterController::class, 'postLogin'])->name('login.post'); 
+Route::get('registration', [LoginRegisterController::class, 'registration'])->name('register');
+Route::post('post-registration', [LoginRegisterController::class, 'postRegistration'])->name('register.post'); 
+Route::get('dashboard', [LoginRegisterController::class, 'dashboard']); 
+Route::get('logout', [LoginRegisterController::class, 'logout'])->name('logout');

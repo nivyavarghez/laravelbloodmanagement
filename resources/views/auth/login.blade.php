@@ -9,7 +9,8 @@
     
 </body>
 </html>
-<form action="{{ route('auth.login') }}" method="POST">
+<form action="{{ route('login.post') }}" method="POST">
+    @csrf
 <section class="vh-100 gradient-custom">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-centre h-100">
