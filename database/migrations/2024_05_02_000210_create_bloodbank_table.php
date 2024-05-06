@@ -11,8 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bloodbank', function (Blueprint $table) {
+        Schema::create('blood_banks', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('address');
+            $table->string('ownership');
+            $table->string('licence_number')->nullable();
+            $table->string('licence_address')->nullable();
+            $table->date('validity')->nullable();
+            $table->string('telephone_number')->nullable();
+            $table->string('email')->nullable();
+            $table->string('status')->nullable();
+            $table->string('medical_officer')->nullable();
             $table->timestamps();
         });
     }
@@ -22,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bloodbank');
+        Schema::dropIfExists('blood_banks');
     }
 };

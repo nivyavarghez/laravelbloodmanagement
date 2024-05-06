@@ -16,7 +16,6 @@
     <button class="btn btn-outline-success" type="button">Donor</button>
     <button class="btn btn-outline-success" type="button">Blood Bank</button>
     <button class="btn btn-outline-success" type="button">Contact Us</button>
-    <!-- <button class="btn btn-sm btn-outline-secondary" type="button">Smaller button</button> -->
   </form>
 </nav>
         <div class="col-md-8">
