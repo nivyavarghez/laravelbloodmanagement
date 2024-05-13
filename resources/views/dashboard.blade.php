@@ -33,7 +33,7 @@
                 <h1 class="display-4">Welcome to our Blood Donation Portal</h1>
                 <p class="lead">Help save lives by donating blood today!</p>
                 <div class="mt-4">
-                    <a href="#" class="btn btn-danger btn-lg mr-2">Donate Blood</a>
+                    <a href="" class="btn btn-danger btn-lg mr-2">Donate Blood</a>
                     <a href="#" class="btn btn-secondary btn-lg">Find a Camp</a>
                 </div>
             </div>

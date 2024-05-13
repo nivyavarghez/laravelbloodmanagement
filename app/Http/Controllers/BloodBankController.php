@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\BloodBank;
 
 class BloodBankController extends Controller
 {
-    use App\Models\BloodBank;
-use Illuminate\Http\Request;
 
+public function showRegister(){
+    return view('bloodbank.bloodbankreg');
+}
 public function bloodbankindex(Request $request){
     // Validate the incoming request data
     $request->validate([

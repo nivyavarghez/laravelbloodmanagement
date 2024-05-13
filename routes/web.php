@@ -25,7 +25,7 @@ Route::get('logout', [LoginRegisterController::class, 'logout'])->name('logout')
 // Route::get('logout', [LoginRegisterController::class, 'logout']);
 
 // Blood Bank Routes
-Route::get('bloodbank/register', [BloodBankController::class, 'register']);
+Route::get('/bloodbank/register', [BloodBankController::class, 'showRegister']);
 Route::get('bloodbank', [BloodBankController::class, 'index']);
 
 // Donor Routes
