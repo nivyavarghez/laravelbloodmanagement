@@ -3,10 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Donor; // Import the Donor model
+use App\Models\BloodDonor; // Import the Donor model
 
 class DonorController extends Controller
 {
+
+    public function showRegister(){
+        return view('donor.donorreg');
+    }
     // Donor Registration
     public function register(Request $request)
     {
@@ -21,7 +25,7 @@ class DonorController extends Controller
         ]);
 
         // Create a new Donor instance and save it to the database
-        $donor = Donor::create([
+        $donor = BloodDonor::create([
             'name' => $request->name,
             'email' => $request->email,
             'blood_group' => $request->blood_group,
@@ -37,8 +41,8 @@ class DonorController extends Controller
     public function index()
     {
         // Fetch donor data from database
-        $donors = Donor::all();
+        $donors = BloodDonor::all();
 
-        return view('donor.index', compact('donors'));
+        return view('donor.listing', compact('donors'));
     }
 }

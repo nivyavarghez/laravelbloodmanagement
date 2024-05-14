@@ -50,6 +50,6 @@ public function bloodbankindex(Request $request){
         // Fetch blood bank data from database
         $bloodBanks = BloodBank::all();
 
-        return view('bloodbank.index', compact('bloodBanks'));
+        return view('bloodbank.banklist', compact('bloodBanks'));
     }
 }

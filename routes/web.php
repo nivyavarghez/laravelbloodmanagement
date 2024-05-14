@@ -16,21 +16,13 @@ Route::get('logout', [LoginRegisterController::class, 'logout'])->name('logout')
 
 // Route::get('bloodbankreg',[BloodBankController::class, 'bloodbankindex']);
 
-// // Authentication Routes
-// Route::get('login', [LoginRegisterController::class, 'index']);
-// Route::get('register', [LoginRegisterController::class, 'registration']);
-// Route::post('post-login', [LoginRegisterController::class, 'postLogin']);
-// Route::post('post-registration', [LoginRegisterController::class, 'postRegistration']);
-// Route::get('dashboard', [LoginRegisterController::class, 'dashboard']);
-// Route::get('logout', [LoginRegisterController::class, 'logout']);
 
 // Blood Bank Routes
-Route::get('/bloodbank/register', [BloodBankController::class, 'showRegister']);
-Route::get('bloodbank', [BloodBankController::class, 'index']);
+// Route::get('/bloodbank/register', [BloodBankController::class, 'showRegister']);
+Route::get('/bloodbank', [BloodBankController::class, 'index'])->name('bloodbank.banklist');
 
 // Donor Routes
-Route::get('donor/register', [DonorController::class, 'register']);
-Route::get('donor', [DonorController::class, 'index']);
+Route::get('/donor/register', [DonorController::class, 'showRegister'])->name('donor.donorreg');
 
 // // Contact Route
 // Route::get('contact', [ContactController::class, 'index']);

@@ -18,8 +18,8 @@
               <div class="container">
                 <form class="form-inline">
                     <button class="btn btn-outline-light" type="button">Home</button>
-                    <button class="btn btn-outline-light" type="button">Donor</button>
-                    <button class="btn btn-outline-light" type="button">Blood Bank</button>
+                    <button class="btn btn-outline-light" type="button" onclick="window.location.href='{{ route('donor.donorreg') }}'">Donor</button>
+                    <button class="btn btn-outline-light" type="button" onclick="window.location.href='{{ route('bloodbank.banklist') }}'">Blood Bank</button>
                     <button class="btn btn-outline-light" type="button">Contact Us</button>
                 </form>
             </nav>
