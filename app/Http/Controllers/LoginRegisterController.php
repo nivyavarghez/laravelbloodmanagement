@@ -45,7 +45,7 @@ class LoginRegisterController extends Controller
    
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard')
+            return redirect()->intended('home')
                         ->withSuccess('You have Successfully loggedin');
         }
   
@@ -70,7 +70,7 @@ class LoginRegisterController extends Controller
         $data = $request->all();
         $check = $this->create($data);
          
-        return redirect("dashboard")->withSuccess('Great! You have Successfully loggedin');
+        return redirect("home")->withSuccess('Great! You have Successfully loggedin');
     }
     
     /**
@@ -78,10 +78,10 @@ class LoginRegisterController extends Controller
      *
      * @return response()
      */
-    public function dashboard()
+    public function home()
     {
         if(Auth::check()){
-            return view('dashboard');
+            return view('home');
         }
   
         return redirect("login")->withSuccess('Opps! You do not have access');

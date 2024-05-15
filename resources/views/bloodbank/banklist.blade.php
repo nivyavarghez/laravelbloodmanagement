@@ -1,3 +1,5 @@
+@include('layout.header')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

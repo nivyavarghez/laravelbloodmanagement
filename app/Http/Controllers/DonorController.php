@@ -25,16 +25,25 @@ class DonorController extends Controller
         ]);
 
         // Create a new Donor instance and save it to the database
-        $donor = BloodDonor::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'blood_group' => $request->blood_group,
-            'phone_number' => $request->phone_number,
-            'address' => $request->address,
-        ]);
-
-        // Redirect back with a success message
-        return redirect()->back()->with('success', 'Donor registered successfully!');
+        try {
+            // Create a new Donor instance and save it to the database
+            $donor = BloodDonor::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'blood_group' => $request->blood_group,
+                'phone_number' => $request->phone_number,
+                'address' => $request->address,
+            ]);
+    
+            // Redirect to a specific route after successful registration
+            return redirect()->route('thank-you')->with('success', 'Thank you for registering as a donor!');
+        } catch (\Exception $e) {
+            // Log the error
+            \Log::error('Error registering donor: ' . $e->getMessage());
+            
+            // Redirect back with an error message
+            return redirect()->back()->with('error', 'An error occurred while registering. Please try again.');
+        }
     }
 
     // Donor Listing
