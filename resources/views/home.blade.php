@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+
+@include('layout.header')
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,8 +15,8 @@
     </style>
 </head>
 <body>
-        <!-- <div class="row justify-content-center"> -->
-            <nav class="navbar navbar-light bg-danger">
+        <div class="row justify-content-center"> -->
+            <!-- <nav class="navbar navbar-light bg-danger">
               <div class="container">
                 <form class="form-inline">
                     <button class="btn btn-outline-light" type="button">Home</button>
@@ -23,7 +25,7 @@
                     <button class="btn btn-outline-light" type="button">Contact Us</button>
                 </form>
             </nav>
-        <!-- </div> -->
+        </div> -->
 
         <!-- Hero section -->
         <section class="hero image-fluid" style="background-image: url('{{ asset('images/Blood-Donation-1.webp') }}'); background-size: cover; background-position: inherit;">
@@ -33,7 +35,7 @@
                 <h1 class="display-4">Welcome to our Blood Donation Portal</h1>
                 <p class="lead">Help save lives by donating blood today!</p>
                 <div class="mt-4">
-                    <a href="" class="btn btn-danger btn-lg mr-2">Donate Blood</a>
+                    <a href="{{ route('donor.donorreg') }}" class="btn btn-danger btn-lg mr-2" >Donate Blood</a>
                     <a href="#" class="btn btn-secondary btn-lg">Find a Camp</a>
                 </div>
             </div>

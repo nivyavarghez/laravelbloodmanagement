@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h2 class="mt-5 mb-4">Blood Bank Registration Form</h2>
-        <form action="" method="POST">
+        <form action="{{ route('bloodbank.register')}}" method="POST">
             @csrf
             <div class="mb-3">
                 <label for="name" class="form-label">Name:</label>
