@@ -113,4 +113,11 @@ class LoginRegisterController extends Controller
   
         return Redirect('login');
     }
+    //admin panel
+    public function adminindex()
+    {
+        $users = User::all();
+        return view('admin.users', compact('users'));
+    }
+
 }

@@ -45,11 +45,11 @@ public function bloodbankindex(Request $request){
 }
 
 
-    public function index()
-    {
-        // Fetch blood bank data from database
-        $bloodBanks = BloodBank::all();
 
-        return view('bloodbank.banklist', compact('bloodBanks'));
-    }
+public function getindex()
+{
+    $bloodBanks = BloodBank::all();
+    return view('admin.bloodbanks', compact('bloodBanks'));
+}
+
 }
