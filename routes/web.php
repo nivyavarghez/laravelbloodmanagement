@@ -10,10 +10,13 @@ use App\Http\Controllers\LoginRegisterController;
 
 Route::get('login', [LoginRegisterController::class, 'index'])->name('login');
 Route::post('post-login', [LoginRegisterController::class, 'postLogin'])->name('login.post'); 
-Route::get('registration', [LoginRegisterController::class, 'registration'])->name('register');
-Route::post('post-registration', [LoginRegisterController::class, 'postRegistration'])->name('register.post'); 
+
+Route::get('registration', [LoginRegisterController::class, 'registration'])->name('auth.register');
+Route::post('post-registration', [LoginRegisterController::class, 'postRegistration'])->name('auth.register.post');
+
 Route::get('home', [LoginRegisterController::class, 'home']); 
 Route::get('logout', [LoginRegisterController::class, 'logout'])->name('logout');
+
 
 // Route::get('bloodbankreg',[BloodBankController::class, 'bloodbankindex']);
 

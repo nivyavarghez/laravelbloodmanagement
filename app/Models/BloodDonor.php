@@ -18,6 +18,5 @@ class BloodDonor extends Model
         'address',
     ];
 
-    protected $fillable = ['name', 'email', 'blood_group', 'phone_number', 'address'];
 
 }

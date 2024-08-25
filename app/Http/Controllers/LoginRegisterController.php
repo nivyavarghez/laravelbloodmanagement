@@ -37,20 +37,21 @@ class LoginRegisterController extends Controller
      * @return response()
      */
     public function postLogin(Request $request)
-    {
-        $request->validate([
-            'email' => 'required',
-            'password' => 'required',
-        ]);
-   
-        $credentials = $request->only('email', 'password');
-        if (Auth::attempt($credentials)) {
-            return redirect()->intended('home')
-                        ->withSuccess('You have Successfully loggedin');
-        }
-  
-        return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
+{
+    $request->validate([
+        'email' => 'required|email',
+        'password' => 'required',
+    ]);
+
+    $credentials = $request->only('email', 'password');
+    if (Auth::attempt($credentials)) {
+        // Redirect to home page after successful login
+        return redirect()->intended('home')->with('success', 'You have successfully logged in');
     }
+
+    
+}
+
       
     /**
      * Write code on Method

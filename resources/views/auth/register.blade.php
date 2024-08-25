@@ -12,7 +12,7 @@
         <div class="col-md-6">
             <h3 >Register</h3>  
 
-            <form action="{{ route('register.post') }}" method="POST">
+            <form action="{{ route('auth.register.post') }}" method="POST">
     @csrf <!-- Add CSRF protection -->
 
     <!-- Name -->
