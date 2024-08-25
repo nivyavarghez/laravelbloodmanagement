@@ -10,13 +10,13 @@ class BloodDonor extends Model
     use HasFactory;
     protected $table = 'blooddonors';
 
-    // protected $fillable = [
-    //     'name',
-    //     'email',
-    //     'blood_group',
-    //     'phone_number',
-    //     'address',
-    // ];
+    protected $fillable = [
+        'name',
+        'email',
+        'blood_group',
+        'phone_number',
+        'address',
+    ];
 
     protected $fillable = ['name', 'email', 'blood_group', 'phone_number', 'address'];
 
