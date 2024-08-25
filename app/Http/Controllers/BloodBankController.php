@@ -26,7 +26,6 @@ public function bloodbankindex(Request $request){
         'medical_officer' => 'required',
     ]);
 
-    // Create a new BloodBank instance and save it to the database
     $bloodBank = BloodBank::create([
         'name' => $request->name,
         'address' => $request->address,
